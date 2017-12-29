@@ -109,7 +109,7 @@
 <meta property="og:site_name" content="Gemini&#39;Blog">
 <meta property="og:description" content="引很多博客、文章、Hexo官网都已经很详细的讲解了关于hexo的好处，用法。这里，我记录下我在使用过程中所遇到的问题，方便大家的学习。 OK，Start：">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-29T06:34:35.416Z">
+<meta property="og:updated_time" content="2017-12-29T06:50:59.386Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Windows环境下搭建Hexo+Github博客记录">
 <meta name="twitter:description" content="引很多博客、文章、Hexo官网都已经很详细的讲解了关于hexo的好处，用法。这里，我记录下我在使用过程中所遇到的问题，方便大家的学习。 OK，Start：">
@@ -375,7 +375,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-12-29T14:34:35+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2017-12-29T14:50:59+08:00">
                 2017-12-29
               </time>
             
@@ -457,17 +457,17 @@ $ npm install
 └── themes
 </code></pre><p>这样Hexo的资源就安装好了。然后在本地运行输入以下命令：</p>
 <pre><code>$hexo s -g 
-</code></pre><p>然后就可以在本地浏览器访问<a href="http://localhost:4000，查看本地博客了。ctrl+C可以关闭调试。" target="_blank" rel="noopener">http://localhost:4000，查看本地博客了。ctrl+C可以关闭调试。</a></p>
+</code></pre><p>然后就可以在本地浏览器访问 <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> ，查看本地博客了。Ctrl+C可以关闭调试。</p>
 <h1 id="同步到GitHub"><a href="#同步到GitHub" class="headerlink" title="同步到GitHub"></a>同步到GitHub</h1><p>在不购买服务器的前提下，我们的网站需要挂在GitHub Pages上。GitHub Pages是面向用户、组织和项目开放的公共静态页面搭建托管服务，可用于搭建个人博客。</p>
 <ul>
 <li>首先需要一个<a href="https://github.com/" target="_blank" rel="noopener">Github</a>账号</li>
 <li>进入<a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a></li>
-<li>GitHub中New repository一个项目，此项目必须以账号名.github.io命名。</li>
+<li>GitHub中New repository一个项目，此项目必须以yourname.github.io命名。</li>
 <li>然后在项目中进入Setting–&gt;Deploy keys添加本机的ssh。具体生成方法自行百度。</li>
 <li><p>然后在本地博客站点_config.yml中设置：</p>
 <pre><code>deploy：
     type: git
-    repository: git@github.com:gemini0416/gemini0416.github.io.git
+    repository: git@github.com:yourname/yourname.github.io.git
     branch: master
 </code></pre></li>
 <li><p>在terminal终端，将当前目录切换到你的本地博客目录，执行以下命令：</p>
