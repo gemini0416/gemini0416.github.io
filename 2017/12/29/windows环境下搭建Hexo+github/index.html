@@ -101,18 +101,18 @@
 
 
 
-<meta name="description" content="引很多博客、文章、[Hexo官网][https://hexo.io/zh-cn/]都已经很详细的讲解了关于hexo的好处，用法。这里，我记录下我在使用过程中所遇到的问题，方便大家的学习。 OK，Start：">
+<meta name="description" content="引很多博客、文章、Hexo官网都已经很详细的讲解了关于hexo的好处，用法。这里，我记录下我在使用过程中所遇到的问题，方便大家的学习。 OK，Start：">
 <meta name="keywords" content="hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Windows环境下搭建Hexo+Github博客记录">
 <meta property="og:url" content="http://yoursite.com/2017/12/29/windows环境下搭建Hexo+github/index.html">
 <meta property="og:site_name" content="Gemini&#39;Blog">
-<meta property="og:description" content="引很多博客、文章、[Hexo官网][https://hexo.io/zh-cn/]都已经很详细的讲解了关于hexo的好处，用法。这里，我记录下我在使用过程中所遇到的问题，方便大家的学习。 OK，Start：">
+<meta property="og:description" content="引很多博客、文章、Hexo官网都已经很详细的讲解了关于hexo的好处，用法。这里，我记录下我在使用过程中所遇到的问题，方便大家的学习。 OK，Start：">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-29T05:52:55.191Z">
+<meta property="og:updated_time" content="2017-12-29T06:34:35.416Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Windows环境下搭建Hexo+Github博客记录">
-<meta name="twitter:description" content="引很多博客、文章、[Hexo官网][https://hexo.io/zh-cn/]都已经很详细的讲解了关于hexo的好处，用法。这里，我记录下我在使用过程中所遇到的问题，方便大家的学习。 OK，Start：">
+<meta name="twitter:description" content="引很多博客、文章、Hexo官网都已经很详细的讲解了关于hexo的好处，用法。这里，我记录下我在使用过程中所遇到的问题，方便大家的学习。 OK，Start：">
 
 
 
@@ -365,8 +365,19 @@
             
 
             
-			
+              <span class="post-meta-divider">|</span>
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-12-29T14:34:35+08:00">
+                2017-12-29
+              </time>
             
           </span>
 
@@ -421,10 +432,57 @@
 
       
         <hr>
-<h1 id="引"><a href="#引" class="headerlink" title="引"></a>引</h1><p>很多博客、文章、[Hexo官网][<a href="https://hexo.io/zh-cn/]都已经很详细的讲解了关于hexo的好处，用法。这里，我记录下我在使用过程中所遇到的问题，方便大家的学习。" target="_blank" rel="noopener">https://hexo.io/zh-cn/]都已经很详细的讲解了关于hexo的好处，用法。这里，我记录下我在使用过程中所遇到的问题，方便大家的学习。</a></p>
+<h1 id="引"><a href="#引" class="headerlink" title="引"></a>引</h1><p>很多博客、文章、<a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">Hexo官网</a>都已经很详细的讲解了关于hexo的好处，用法。这里，我记录下我在使用过程中所遇到的问题，方便大家的学习。</p>
 <p>OK，Start：</p>
 <a id="more"></a>
 <h1 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h1><p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
+<h1 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h1><p>需要安装<a href="https://git-scm.com/" target="_blank" rel="noopener">git</a>、 <a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js</a>。</p>
+<p>git base命令（$结尾都是git base）：</p>
+<pre><code>$ npm install -g hexo-cli
+</code></pre><p>安装完成后验证状态：</p>
+<pre><code>$ node -v
+$ npm -v
+$ hexo -v
+</code></pre><h1 id="建站"><a href="#建站" class="headerlink" title="建站"></a>建站</h1><pre><code>$ hexo init &lt;folder&gt;
+$ cd &lt;folder&gt;
+$ npm install
+</code></pre><p>完成后，该文件夹下的目录结构如下：</p>
+<pre><code>.
+├── _config.yml
+├── package.json
+├── scaffolds    
+├── source
+|   ├── _drafts
+|   └── _posts
+└── themes
+</code></pre><p>这样Hexo的资源就安装好了。然后在本地运行输入以下命令：</p>
+<pre><code>$hexo s -g 
+</code></pre><p>然后就可以在本地浏览器访问<a href="http://localhost:4000，查看本地博客了。ctrl+C可以关闭调试。" target="_blank" rel="noopener">http://localhost:4000，查看本地博客了。ctrl+C可以关闭调试。</a></p>
+<h1 id="同步到GitHub"><a href="#同步到GitHub" class="headerlink" title="同步到GitHub"></a>同步到GitHub</h1><p>在不购买服务器的前提下，我们的网站需要挂在GitHub Pages上。GitHub Pages是面向用户、组织和项目开放的公共静态页面搭建托管服务，可用于搭建个人博客。</p>
+<ul>
+<li>首先需要一个<a href="https://github.com/" target="_blank" rel="noopener">Github</a>账号</li>
+<li>进入<a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a></li>
+<li>GitHub中New repository一个项目，此项目必须以账号名.github.io命名。</li>
+<li>然后在项目中进入Setting–&gt;Deploy keys添加本机的ssh。具体生成方法自行百度。</li>
+<li><p>然后在本地博客站点_config.yml中设置：</p>
+<pre><code>deploy：
+    type: git
+    repository: git@github.com:gemini0416/gemini0416.github.io.git
+    branch: master
+</code></pre></li>
+<li><p>在terminal终端，将当前目录切换到你的本地博客目录，执行以下命令：</p>
+<pre><code>npm install hexo-deployer-git --save
+</code></pre></li>
+<li><p>然后运行以下命令就可以同步到GitHub：</p>
+<pre><code>$hexo clean // clean本地项目，防止缓存
+$hexo g // 全拼是：hexo generate，可以简写成 hexo g; 根据你编辑的md格式的博客，生成静态网页
+$hexo d // 全拼是：hexo deploy，可以简写成 hexo d; 将本地博客发布到github
+</code></pre></li>
+<li><p>更新博客到github命令：</p>
+<pre><code>$hexo d -g
+</code></pre></li>
+</ul>
+<hr>
 
       
     </div>
@@ -539,7 +597,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">1</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -585,7 +643,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#引"><span class="nav-number">1.</span> <span class="nav-text">引</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo"><span class="nav-number">2.</span> <span class="nav-text">Hexo</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#引"><span class="nav-number">1.</span> <span class="nav-text">引</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo"><span class="nav-number">2.</span> <span class="nav-text">Hexo</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#前期准备"><span class="nav-number">3.</span> <span class="nav-text">前期准备</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#建站"><span class="nav-number">4.</span> <span class="nav-text">建站</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#同步到GitHub"><span class="nav-number">5.</span> <span class="nav-text">同步到GitHub</span></a></li></ol></div>
             
 
           </div>
