@@ -417,6 +417,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/12/29/windows环境下搭建Hexo+github/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2017/12/29/windows环境下搭建Hexo+github/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -554,6 +564,14 @@ $hexo d // 全拼是：hexo deploy，可以简写成 hexo d; 将本地博客发�
 
 
           
+
+  
+    <div class="comments" id="comments">
+      
+        <div onclick="showGitment()" id="gitment-display-button">显示 Gitment 评论</div>
+        <div id="gitment-container" style="display:none"></div>
+      
+    </div>
 
   
 
@@ -751,12 +769,11 @@ $hexo d // 全拼是：hexo deploy，可以简写成 hexo d; 将本地博客发�
   
 
 
-
-
-
-
   
-  
+
+
+
+
 
 
 
@@ -796,12 +813,7 @@ $hexo d // 全拼是：hexo deploy，可以简写成 hexo d; 将本地博客发�
 
   
   
-    <script type="text/javascript" src="/lib/three/three.min.js"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
   
 
 
@@ -856,6 +868,47 @@ $hexo d // 全拼是：hexo deploy，可以简写成 hexo d; 将本地博客发�
 
 
 
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname, 
+            owner: 'gemini0416',
+            repo: 'gemini0416.github.io',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: 'd9a50a5efa1a7c65217269666823e84d8304fdd8',
+            
+                client_id: '8f06d7ce0f31ee67c26f'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      function showGitment(){
+        document.getElementById("gitment-display-button").style.display = "none";
+        document.getElementById("gitment-container").style.display = "block";
+        renderGitment();
+      }
+      
+      </script>
+    
 
 
 
