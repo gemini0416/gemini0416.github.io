@@ -1,14 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search>
-  <entry>
-    <title><![CDATA[Windows环境下搭建Hexo+Github博客记录]]></title>
-    <url>%2F2017%2F12%2F29%2Fwindows%E7%8E%AF%E5%A2%83%E4%B8%8B%E6%90%AD%E5%BB%BAHexo%2Bgithub%2F</url>
-    <content type="text"><![CDATA[引很多博客、文章、Hexo官网都已经很详细的讲解了关于hexo的好处，用法。这里，我记录下我在使用过程中所遇到的问题，方便大家的学习。 OK，Start： HexoHexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。 前期准备需要安装Git、 Node.js。 git base命令（$结尾都是git base）： $ npm install -g hexo-cli 安装完成后验证状态： $ node -v $ npm -v $ hexo -v 建站$ hexo init &lt;folder&gt; $ cd &lt;folder&gt; $ npm install 完成后，该文件夹下的目录结构如下： . ├── _config.yml ├── package.json ├── scaffolds ├── source | ├── _drafts | └── _posts └── themes 这样Hexo的资源就安装好了。然后在本地运行输入以下命令： $hexo s -g 然后就可以在本地浏览器访问 http://localhost:4000 ，查看本地博客了。Ctrl+C可以关闭调试。 同步到GitHub在不购买服务器的前提下，我们的网站需要挂在GitHub Pages上。GitHub Pages是面向用户、组织和项目开放的公共静态页面搭建托管服务，可用于搭建个人博客。 首先需要一个Github账号 进入GitHub Pages GitHub中New repository一个项目，此项目必须以yourname.github.io命名。 然后在项目中进入Setting–&gt;Deploy keys添加本机的ssh。具体生成方法自行百度。 然后在本地博客站点_config.yml中设置： deploy： type: git repository: git@github.com:yourname/yourname.github.io.git branch: master 在terminal终端，将当前目录切换到你的本地博客目录，执行以下命令： npm install hexo-deployer-git --save 然后运行以下命令就可以同步到GitHub： $hexo clean // clean本地项目，防止缓存 $hexo g // 全拼是：hexo generate，可以简写成 hexo g; 根据你编辑的md格式的博客，生成静态网页 $hexo d // 全拼是：hexo deploy，可以简写成 hexo d; 将本地博客发布到github 更新博客到github命令： $hexo d -g]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
+<search> 
+  
+    
+    <entry>
+      <title><![CDATA[Hexo中使用Next主题]]></title>
+      <url>/2017/12/29/Hexo%E4%B8%AD%E4%BD%BF%E7%94%A8Next%E4%B8%BB%E9%A2%98/</url>
+      <content type="html"><![CDATA[<hr>
+<h1 id="Next主题"><a href="#Next主题" class="headerlink" title="Next主题"></a>Next主题</h1><p>Next主题是比较简约的，也正是由于它的此特性受到大部分的喜爱，包括我。</p>
+<ul>
+<li><a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">Github地址</a></li>
+<li><a href="http://theme-next.iissnan.com/" target="_blank" rel="noopener">Next官网</a></li>
+</ul>
+<p>由于使用的是最新的v5.1.2，遇到一些配置上的问题在官网使用手册中未描述，在这里作下记录。</p>
+<a id="more"></a>
+<hr>
+<hr>
+<h1 id="设置菜单"><a href="#设置菜单" class="headerlink" title="设置菜单"></a>设置菜单</h1><p>以此为例介绍：<br>home: / || home (home对应为menu文件以及语言，/**/对应链接，||后是menu_icon，icon_name是<a href="http://fontawesome.io/icons/" target="_blank" rel="noopener">Font Awesome</a>)图标的名字。</p>
+<hr>
+<h1 id="设置更新时间"><a href="#设置更新时间" class="headerlink" title="设置更新时间"></a>设置更新时间</h1><p>主题配置文件_config.yml找到post_meta字段，将updated_at值设置为true。<br>在your-hexo-site–&gt;scaffolds–&gt;post.md文件中配置modified: { { date } }</p>
+<hr>
+]]></content>
+      
+        <categories>
+            
+            <category> Hexo </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Windows环境下搭建Hexo+Github博客记录]]></title>
+      <url>/2017/12/29/windows%E7%8E%AF%E5%A2%83%E4%B8%8B%E6%90%AD%E5%BB%BAHexo+github/</url>
+      <content type="html"><![CDATA[<hr>
+<h1 id="引"><a href="#引" class="headerlink" title="引"></a>引</h1><p>很多博客、文章、<a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">Hexo官网</a>都已经很详细的讲解了关于hexo的好处，用法。这里，我记录下我在使用过程中所遇到的问题，方便大家的学习。</p>
+<p>OK，Start：</p>
+<a id="more"></a>
+<h1 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h1><p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
+<h1 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h1><p>需要安装<a href="https://git-scm.com/" target="_blank" rel="noopener">Git</a>、 <a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js</a>。</p>
+<p>git base命令（$结尾都是git base）：</p>
+<pre><code>$ npm install -g hexo-cli
+</code></pre><p>安装完成后验证状态：</p>
+<pre><code>$ node -v
+$ npm -v
+$ hexo -v
+</code></pre><h1 id="建站"><a href="#建站" class="headerlink" title="建站"></a>建站</h1><pre><code>$ hexo init &lt;folder&gt;
+$ cd &lt;folder&gt;
+$ npm install
+</code></pre><p>完成后，该文件夹下的目录结构如下：</p>
+<pre><code>.
+├── _config.yml
+├── package.json
+├── scaffolds    
+├── source
+|   ├── _drafts
+|   └── _posts
+└── themes
+</code></pre><p>这样Hexo的资源就安装好了。然后在本地运行输入以下命令：</p>
+<pre><code>$hexo s -g 
+</code></pre><p>然后就可以在本地浏览器访问 <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> ，查看本地博客了。Ctrl+C可以关闭调试。</p>
+<h1 id="同步到GitHub"><a href="#同步到GitHub" class="headerlink" title="同步到GitHub"></a>同步到GitHub</h1><p>在不购买服务器的前提下，我们的网站需要挂在GitHub Pages上。GitHub Pages是面向用户、组织和项目开放的公共静态页面搭建托管服务，可用于搭建个人博客。</p>
+<ul>
+<li>首先需要一个<a href="https://github.com/" target="_blank" rel="noopener">Github</a>账号</li>
+<li>进入<a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a></li>
+<li>GitHub中New repository一个项目，此项目必须以yourname.github.io命名。</li>
+<li>然后在项目中进入Setting–&gt;Deploy keys添加本机的ssh。具体生成方法自行百度。</li>
+<li><p>然后在本地博客站点_config.yml中设置：</p>
+<pre><code>deploy：
+    type: git
+    repository: git@github.com:yourname/yourname.github.io.git
+    branch: master
+</code></pre></li>
+<li><p>在terminal终端，将当前目录切换到你的本地博客目录，执行以下命令：</p>
+<pre><code>npm install hexo-deployer-git --save
+</code></pre></li>
+<li><p>然后运行以下命令就可以同步到GitHub：</p>
+<pre><code>$hexo clean // clean本地项目，防止缓存
+$hexo g // 全拼是：hexo generate，可以简写成 hexo g; 根据你编辑的md格式的博客，生成静态网页
+$hexo d // 全拼是：hexo deploy，可以简写成 hexo d; 将本地博客发布到github
+</code></pre></li>
+<li><p>更新博客到github命令：</p>
+<pre><code>$hexo d -g
+</code></pre></li>
+</ul>
+<hr>
+]]></content>
+      
+        <categories>
+            
+            <category> Hexo </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+        
+    </entry>
+    
+  
+  
 </search>
